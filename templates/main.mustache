@@ -1,0 +1,31 @@
+<table class="table admintable text-center">
+    <thead>
+        <tr>
+            <th>Firstname</th>
+            <th>Lastname</th>
+            <th>E-mail</th>
+            <th>Timecreated</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+    {{#data}}
+        <tr>
+            <td>{{firstname}}</td>
+            <td>{{lastname}}</td>
+            <td>{{email}}</td>
+            <td>{{timecreated}}</td>
+            <td>
+              <button class="btn btn-danger btn-sm" onclick="deleteRecord('{{id}}', '{{firstname}}', '{{lastname}}')">Delete</button>
+            </td>
+        </tr>
+    {{/data}}
+    {{^data}}
+        <tr>
+            <td colspan="5" class="text-center">
+                No data to display. Add a record
+            </td>
+        </tr>
+    {{/data}}
+    </tbody>
+</table>
